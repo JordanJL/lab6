@@ -76,7 +76,7 @@ if (isset($_POST['key'])) {
 		$precio = $_POST['prec'];
 		$cantidad = $_POST['cant'];
 		actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad);
-	}4
+	}
 	if($_POST['key']=='actualizarNombres'){
 		$nombre = $_POST['cod'];
 		actualizarProducto($conexion,$nombre);
