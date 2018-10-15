@@ -47,7 +47,10 @@ function actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad){
 						WHERE codigo = '" . $codigo . "'";
 	$conexion->consulta($actualizar);
 }
-
+function actualizarNombres($conexion,$nombre){
+	$actualizar =  "UPDATE tbl_productos SET nombre='$nombre'";
+	$conexion->consulta($actualizar);
+}
 
 if (isset($_POST['btn_eliminar'])) {
 	$codigo = $_POST['txt_cod'];
@@ -73,6 +76,10 @@ if (isset($_POST['key'])) {
 		$precio = $_POST['prec'];
 		$cantidad = $_POST['cant'];
 		actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad);
+	}4
+	if($_POST['key']=='actualizarNombres'){
+		$nombre = $_POST['cod'];
+		actualizarProducto($conexion,$nombre);
 	}
 }
 

@@ -55,3 +55,18 @@ function actualizarProductosAjax () {
 		$("#msjbox").html(" Error al Actializar");
 	});
 }
+
+function actualizarNombres () {
+	$.ajax({
+		type: 'POST',
+		url: 'mantenimiento.php',
+		
+		data: {key: 'actualizarNombres', cod: $('#txt_nom').val()}
+
+	}).done(function ( datos ) {
+		$("#msjbox").html("Actializado con Exito");
+		cargarProductos('');
+	}).fail(function (jqXHR, textStatus, errorThrown){
+		$("#msjbox").html(" Error al Actializar");
+	});
+}
