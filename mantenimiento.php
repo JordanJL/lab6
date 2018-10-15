@@ -5,8 +5,8 @@ ini_set('display_errors', 1);
 require_once("conexion.php");
 
 $servidor = "localhost";
-$usuario = "jordan";
-$pass = "604290185";
+$usuario = "usercore";
+$pass = "una2015";
 $base_datos = "bd_productos";
 $conexion = new Conexion($servidor, $usuario,$pass,$base_datos);
 
