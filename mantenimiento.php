@@ -78,8 +78,8 @@ if (isset($_POST['key'])) {
 		actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad);
 	}
 	if($_POST['key']=='actualizarNombres'){
-		$nombre = $_POST['cod'];
-		actualizarProducto($conexion,$nombre);
+		$nombre = $_POST['nom'];
+		actualizarNombres($conexion,$nombre);
 	}
 }
 
