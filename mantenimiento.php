@@ -40,6 +40,15 @@ function eliminarProductos($conexion, $codigo){
 	$conexion->consulta ("DELETE FROM tbl_productos WHERE codigo = '" . $codigo ."'");
 }
 
+
+function actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad){
+	$actualizar =  "UPDATE tbl_productos
+						SET nombre='$nombre', precio='$precio', cantidad='$cantidad'
+						WHERE codigo = '" . $codigo . "'";
+	$conexion->consulta($actualizar);
+}
+
+
 if (isset($_POST['btn_eliminar'])) {
 	$codigo = $_POST['txt_cod'];
 	eliminarProductos($conexion,$codigo);
@@ -58,11 +67,16 @@ if (isset($_POST['key'])) {
 		$codigo = $_POST['cod'];
 		eliminarProductos($conexion,$codigo);
 	}
+	if ($_POST['key']=='actualizar') {	
+		$codigo = $_POST['cod'];
+		$nombre = $_POST['nom'];
+		$precio = $_POST['prec'];
+		$cantidad = $_POST['cant'];
+		actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad);
+	}
 }
-function actualizar($conexion,$dato){
-	$insertar = "UPDATE tbl_productos SET nombre = '$nombre' ";
-	$conexion->consulta($insertar);
-}
+
+
 
 function buscarProductos($conexion,$dato){
 

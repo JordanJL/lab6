@@ -28,6 +28,8 @@ include_once('mantenimiento.php'); ?>
 		<br><br>
 		<input type="button" value="Eliminar" name="btn_eliminar" tabindex="6" onclick="eliminarProductosAjax()">
 		<br><br>	
+		<input type="button" value="Actualizar" name="btn_actualizar" tabindex="6" onclick="actualizarProductosAjax()">
+		<br><br>
 		<br><br>	
 
 	</form>

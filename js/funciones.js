@@ -40,3 +40,18 @@ function eliminarProductosAjax () {
 	});
 }
 
+function actualizarProductosAjax () {
+	$.ajax({
+		type: 'POST',
+		url: 'mantenimiento.php',
+		
+		data: {key: 'actualizar', cod: $('#txt_cod').val(), nom: $('#txt_nom').val(),
+		prec: $('#txt_prec').val(), cant: $('#txt_cant').val()}
+
+	}).done(function ( datos ) {
+		$("#msjbox").html("Actializado con Exito");
+		cargarProductos('');
+	}).fail(function (jqXHR, textStatus, errorThrown){
+		$("#msjbox").html(" Error al Actializar");
+	});
+}
