@@ -5,8 +5,8 @@ ini_set('display_errors', 1);
 require_once("conexion.php");
 
 $servidor = "localhost";
-$usuario = "usercore1";
-$pass = "Jfhj3030_";
+$usuario = "jordan";
+$pass = "604290185";
 $base_datos = "bd_productos";
 $conexion = new Conexion($servidor, $usuario,$pass,$base_datos);
 
@@ -19,20 +19,20 @@ function obtenerProductos($conexion){
 	return $datos;
 }
 
-function insertarProductos($conexion,$codigo,$nombre,$precio,$cantidad){
-	/*$insertar = "INSERT INTO tbl_productos (codigo,nombre,precio,cantidad)
-	VALUES('$codigo','$nombre',$precio,$cantidad)";*/
-	$conexion->consulta("SELECT codigo FROM tbl_productos WHERE codigo = '" . $codigo . "'");
 
+function insertarProductos($conexion,$codigo,$nombre,$precio,$cantidad){
+
+	$conexion->consulta ("SELECT codigo FROM tbl_productos WHERE codigo = '" . $codigo . "'");
+	
 	if ($conexion->extraer_registro()) {
+
 		$actualizar = "UPDATE tbl_productos
-		SET nombre='$nombre', precio=$precio, cantidad=$cantidad
-		WHERE codigo = '" . $codigo . "'";
-		$conexion->consulta($actualizar);
-	}else{
-		$insertar = "INSERT INTO tbl_productos (codigo,nombre,precio,cantidad)
-		VALUES('$codigo','$nombre',$precio,$cantidad)";
-		$conexion->consulta($insertar);
+						SET nombre='$nombre', precio='$precio', cantidad='$cantidad'
+						WHERE codigo = '" . $codigo . "'";
+	} else{ 
+	$insertar = "INSERT INTO tbl_productos(codigo,nombre,precio,cantidad)
+				VALUES('$codigo','$nombre','$precio','$cantidad')";
+	$conexion->consulta($insertar);
 	}
 }
 
