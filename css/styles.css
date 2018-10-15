@@ -1,0 +1,63 @@
+html, body { 
+    margin: 0;
+    padding: 0;
+}
+
+#frm_productos{
+    position: relative;
+    width: 240px;
+    height: 180px;
+    border: 5px solid #AAA;
+    border-radius: 8px;
+    background: #DBEAF9;
+    margin: 20px 20px;
+    padding: 20px;
+    font-family: Segoe UI, Verdana;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+}
+
+.campo_texto{
+    position: absolute;
+    left: 90px;
+    border-radius: 20px;
+    border: 1px solid #AAA;
+    padding: 2px;
+}
+
+#panel{
+    position: relative;
+    width: 480px;
+    height: 180px;
+    border: 5px solid #AAA;
+    border-radius: 8px;
+    background: #CCC;
+    margin: 20px 10px;
+    padding: 20px;
+    font-family: Segoe UI, Verdana;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+}
+
+#resultados {
+    position: relative;
+    width: 400px;
+    height: 80px;
+    border: 2px solid #333;
+    border-radius: 3px;
+    background: #EEE;
+    padding: 20px;
+    font-family: Segoe UI, Verdana;
+    font-size: 12px;
+    overflow: scroll;
+}
+
+table, td {
+    border: 1px solid #999;
+    border-collapse: collapse;
+    background: #EEE;
+    padding: 5px;
+}
+
