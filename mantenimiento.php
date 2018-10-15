@@ -21,11 +21,8 @@ function obtenerProductos($conexion){
 
 
 function insertarProductos($conexion,$codigo,$nombre,$precio,$cantidad){
-
 	$conexion->consulta ("SELECT codigo FROM tbl_productos WHERE codigo = '" . $codigo . "'");
-	
 	if ($conexion->extraer_registro()) {
-
 		$actualizar = "UPDATE tbl_productos
 						SET nombre='$nombre', precio='$precio', cantidad='$cantidad'
 						WHERE codigo = '" . $codigo . "'";
@@ -40,22 +37,16 @@ function eliminarProductos($conexion, $codigo){
 	$conexion->consulta ("DELETE FROM tbl_productos WHERE codigo = '" . $codigo ."'");
 }
 
-
 function actualizarProducto($conexion,$codigo,$nombre,$precio,$cantidad){
 	$actualizar =  "UPDATE tbl_productos
 						SET nombre='$nombre', precio='$precio', cantidad='$cantidad'
 						WHERE codigo = '" . $codigo . "'";
 	$conexion->consulta($actualizar);
 }
+
 function actualizarNombres($conexion,$nombre){
 	$actualizar =  "UPDATE tbl_productos SET nombre='$nombre'";
 	$conexion->consulta($actualizar);
-}
-
-if (isset($_POST['btn_eliminar'])) {
-	$codigo = $_POST['txt_cod'];
-	eliminarProductos($conexion,$codigo);
-	header("Location: formulario.php");
 }
 
 if (isset($_POST['key'])) {
